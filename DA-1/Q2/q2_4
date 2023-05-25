@@ -1,0 +1,8 @@
+# Initializing starting number
+number=5
+
+# Looping through the number and decreasing it by 1
+while [ $number -ge 1 ]; do
+    echo $number
+    number=$((number - 1))
+done

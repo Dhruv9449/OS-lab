@@ -1,0 +1,38 @@
+# Prompt the user for the operation
+echo "Enter the math operation (+, -, x, /):"
+read operation
+
+# Prompt the user for the numbers
+echo "Enter the first number:"
+read number1
+
+echo "Enter the second number:"
+read number2
+
+# Perform the math operation based on the user's input
+case $operation in
+    "+")
+        result=$((number1 + number2))
+        echo "Result: $result"
+        ;;
+    "-")
+        result=$((number1 - number2))
+        echo "Result: $result"
+        ;;
+    "x")
+        result=$((number1 * number2))
+        echo "Result: $result"
+        ;;
+    "/")
+        # Check if the second number is zero
+        if [ $number2 -eq 0 ]; then
+            echo "Error: Division by zero is not allowed."
+        else
+            result=$((number1 / number2))
+            echo "Result: $result"
+        fi
+        ;;
+    *)
+        echo "Error: Invalid operation."
+        ;;
+esac

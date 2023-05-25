@@ -1,0 +1,42 @@
+# Check if three command-line arguments are provided
+if [ $# -ne 3 ]; then
+    echo "Error: Three numbers are required."
+    echo "Usage: $0 <number1> <number2> <number3>"
+    exit 1
+fi
+
+# Assign the command-line arguments to variables
+number1=$1
+number2=$2
+number3=$3
+
+# Check if the arguments are valid numbers
+if ! [[ $number1 =~ ^[0-9]+$ ]]; then
+    echo "Error: Invalid number '$number1'."
+    echo "Usage: $0 <number1> <number2> <number3>"
+    exit 1
+fi
+
+if ! [[ $number2 =~ ^[0-9]+$ ]]; then
+    echo "Error: Invalid number '$number2'."
+    echo "Usage: $0 <number1> <number2> <number3>"
+    exit 1
+fi
+
+if ! [[ $number3 =~ ^[0-9]+$ ]]; then
+    echo "Error: Invalid number '$number3'."
+    echo "Usage: $0 <number1> <number2> <number3>"
+    exit 1
+fi
+
+# Find the biggest number
+if [ $number1 -gt $number2 ] && [ $number1 -gt $number3 ]; then
+    biggest=$number1
+elif [ $number2 -gt $number1 ] && [ $number2 -gt $number3 ]; then
+    biggest=$number2
+else
+    biggest=$number3
+fi
+
+# Print the result
+echo "The biggest number is: $biggest"

@@ -1,0 +1,29 @@
+# Check if two command-line arguments are provided
+if [ $# -ne 2 ]; then
+    echo "Error: Two numbers are required."
+    echo "Usage: $0 <number1> <number2>"
+    exit 1
+fi
+
+# Assign the command-line arguments to variables
+number1=$1
+number2=$2
+
+# Check if the arguments are valid numbers
+if ! [[ $number1 =~ ^[0-9]+$ ]]; then
+    echo "Error: Invalid number '$number1'."
+    echo "Usage: $0 <number1> <number2>"
+    exit 1
+fi
+
+if ! [[ $number2 =~ ^[0-9]+$ ]]; then
+    echo "Error: Invalid number '$number2'."
+    echo "Usage: $0 <number1> <number2>"
+    exit 1
+fi
+
+# Perform the addition
+sum=$((number1 + number2))
+
+# Print the result
+echo "The sum of $number1 and $number2 is: $sum"

@@ -1,0 +1,15 @@
+# Get current date and time
+current_date=$(date "+%Y-%m-%d")
+current_time=$(date "+%H:%M:%S")
+
+# Get username
+username=$(whoami)
+
+# Get current directory
+current_directory=$(pwd)
+
+# Print the information
+echo "Current date: $current_date"
+echo "Current time: $current_time"
+echo "Username: $username"
+echo "Current directory: $current_directory"

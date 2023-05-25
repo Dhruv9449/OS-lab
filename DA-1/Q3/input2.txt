@@ -1,0 +1,4 @@
+Hello this is Dhruv Rajeshkumar Shah
+Registration number: 21BCE0611
+
+This is the input file with extra spaces
